@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router'
 import { Characters } from '../models/Characters';
 
-export const CharacterScreen = () => {
+export const CharacterScreen = ({history}) => {
     //Desescructurando el parametro
     const {id} = useParams();
 
@@ -10,10 +10,16 @@ export const CharacterScreen = () => {
 
     const path = `/assets/${type}-${id}.png`;
 
+    //Regresar un paso atras en el historial de navegacion
+    const handleBack = ()=> {
+        history.goBack(); //Recibimos como parametro (siempre llega)
+    }
+
     return (
         <div>
-          <h1>{id}</h1>  
-          <img src={path} alt={id} />
+            <button onClick={handleBack} className="btn btn-primary">Regresar</button>
+            <h1>{id}</h1>  
+            <img src={path} alt={id} />
         </div>
     )
 }
