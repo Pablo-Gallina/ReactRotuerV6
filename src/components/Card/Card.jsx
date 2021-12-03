@@ -7,7 +7,7 @@ const Card = ({id, name, description, type}) => {
         <div>
             <h1>{name}</h1>
             {/* <img src={path} alt={id} /> */}
-            <Link className="card-link" to={""}>
+            <Link className="card-link" to={`/character/${id}`}>
             VER MAS...
             </Link>
         </div>
