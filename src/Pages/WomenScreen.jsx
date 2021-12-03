@@ -1,9 +1,10 @@
 import React from 'react'
+import ListadoDatos from '../components/ListadoDatos/ListadoDatos'
 
 const WomenScreen = () => {
     return (
         <>
-            <h1>Women</h1>   
+            <ListadoDatos _filter="m" _tituloPagina="Women" />
         </>
     )
 }

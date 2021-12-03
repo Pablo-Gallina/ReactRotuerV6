@@ -1,17 +1,10 @@
 import React from 'react'
-import Card from '../components/Card/Card';
-import { Characters } from '../models/Characters'
+import ListadoDatos from '../components/ListadoDatos/ListadoDatos'
 
 const MenScreen = () => {
-    const men = Characters.filter(character => character.type === "h");
     return (
         <>
-            <h1>Men</h1>   
-            <div className="container">
-                <div>
-                    {men.map(_men => <Card key={_men.id} {..._men} />)}
-                </div>
-            </div>
+            <ListadoDatos _filter="h" _tituloPagina="Men" />
         </>
     )
 }
