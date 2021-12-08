@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
+// import { useLocation } from 'react-router'
 
 const SearchScreen = ({history}) => {
+    //Acceder a query de la url
+    // // hook para obtener el location (url)
+    // const location = useLocation()
+
+    // console.log(location.search);
+
     const [search, setSearch] = useState("")
     const handleChange = (e)=>{
         const value = e.target.value;
