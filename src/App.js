@@ -16,7 +16,7 @@ const App = () => {
 
   // Lanzar un efecto cada vez que log (el que contola el estado del auth) cambie
   useEffect(() => {
-    localStorage.setItem('log', log)
+    localStorage.setItem('log', JSON.stringify(log))
   }, [log])
 
   return (
