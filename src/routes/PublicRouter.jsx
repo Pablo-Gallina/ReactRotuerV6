@@ -1,8 +1,8 @@
 import React from 'react'
-import { Router } from 'react-router'
+import { Route } from 'react-router'
 
-const PublicRouter = ({ component: Component }) => {
-    return <Router component={<Component />}/>
+const PublicRouter = ({  auth, component: Component, ...rest }) => {
+    return <Route {...rest} component={() => <Component />} />
 }
 
 export default PublicRouter

@@ -5,6 +5,8 @@ import { AuthContext } from '../context/AuthContext'
 
 import AppRouter from './AppRouter'
 import Login from '../Pages/LoginScreen'
+import PublicRouter from './PublicRouter'
+import PrivateRouter from './PrivateRouter'
 
 
 const LoginRouter = () => {
@@ -13,10 +15,12 @@ const LoginRouter = () => {
     return (
         <Router>
 
-            <AppRouter />
+            {/* <AppRouter /> */}
+            {/* <Route exact path="/login" component={Login} /> */}
 
             <Switch>
-                <Route exact path="/login" component={Login} />
+                <PublicRouter path="/login" auth={log} component={Login} />
+                <PrivateRouter path="/" auth={log} component={AppRouter} />
             </Switch>
         </Router>
     )
