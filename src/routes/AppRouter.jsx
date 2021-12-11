@@ -20,7 +20,7 @@ const LoginRouter = () => {
             {/* Ruta con parametro (el parametro es id) */}
             <Route exact path="/character/:id" component={CharacterScreen} />
 
-            {/* <Redirect to="/men" /> */}
+            <Redirect to="/men" />
         </Switch>
         </>
     )
