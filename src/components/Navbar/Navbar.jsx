@@ -18,13 +18,13 @@ const Navbar = () => {
         <>
             <ul className="nav justify-content-start me-auto">
                 <li className="nav-item">
-                    <NavLink activeClassName="active text-dark" className="nav-link" to="/men">men</NavLink>
+                    <NavLink className={({isActive})=> `nav-link ${isActive ? 'active text-dark' : ''}`} to="/men">men</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink activeClassName="active text-dark" className="nav-link" to="/women">women</NavLink>
+                    <NavLink className={({isActive})=> `nav-link ${isActive ? 'active text-dark' : ''}`} to="/women">women</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink activeClassName="active text-dark" className="nav-link" to="/search">Search</NavLink>
+                    <NavLink className={({isActive})=> `nav-link ${isActive ? 'active text-dark' : ''}`} to="/search">Search</NavLink>
                 </li>
             </ul>
             <button type="button" className="btn btn-outline-danger d-flex" onClick={handleLogOut}>LogOut</button>

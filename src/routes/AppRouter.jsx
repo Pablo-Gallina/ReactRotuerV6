@@ -19,14 +19,14 @@ const LoginRouter = () => {
             <Navbar />
             <Suspense fallback={<Spinner />}>
                 <Routes>
-                    <Route exact path="/men" component={MenScreen} />
-                    <Route exact path="/women" component={WomenScreen} />
-                    <Route exact path="/search" component={SearchScreen} />
+                    <Route end path="/men" element={<MenScreen/>} />
+                    <Route end path="/women" element={<WomenScreen/>} />
+                    <Route end path="/search" element={<SearchScreen/>} />
 
                     {/* Ruta con parametro (el parametro es id) */}
-                    <Route exact path="/character/:id" component={CharacterScreen} />
+                    <Route end path="/character/:id" element={<CharacterScreen/>} />
 
-                    <Navigate to="/men" />
+                    {/* <Navigate to="/men" /> */}
                 </Routes>
             </Suspense>
         </>

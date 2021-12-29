@@ -19,7 +19,7 @@ const LoginRouter = () => {
                     </PublicRouter>
                 }/>
 
-                <Route path="/" element={
+                <Route path="*" element={
                     <PrivateRouter>
                         <AppRouter />
                     </PrivateRouter>
