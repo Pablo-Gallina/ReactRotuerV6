@@ -8,14 +8,7 @@ const PublicRouter = ({ children }) => {
     const { log } = useContext(AuthContext);
     console.log(log.log);
 
-    // Sino esta logueado
-    if (!log.log) {
-        // Pantalla de login
-        return children
-    }else{
-        // Esta logueado
-        return <Navigate to="/" />
-    }
+    return !log.log ? children : <Navigate to="/" />
 }
 
 export default PublicRouter

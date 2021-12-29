@@ -12,14 +12,17 @@ const LoginRouter = () => {
     
     return (
         <Router>
-
-            {/* <AppRouter /> */}
-            {/* <Route exact path="/login" component={Login} /> */}
             <Routes>
                 <Route path="/login" element={
                     <PublicRouter>
                         <Login />
                     </PublicRouter>
+                }/>
+
+                <Route path="/" element={
+                    <PrivateRouter>
+                        <AppRouter />
+                    </PrivateRouter>
                 }/>
             </Routes>
            
