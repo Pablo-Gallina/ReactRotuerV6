@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Routes, Route, Redirect } from 'react-router-dom'
 
 import Navbar from '../components/Navbar/Navbar'
 import Spinner from '../components/Spinner/Spinner'
@@ -18,7 +18,7 @@ const LoginRouter = () => {
         <>
             <Navbar />
             <Suspense fallback={<Spinner />}>
-                <Switch>
+                <Routes>
                     <Route exact path="/men" component={MenScreen} />
                     <Route exact path="/women" component={WomenScreen} />
                     <Route exact path="/search" component={SearchScreen} />
@@ -27,7 +27,7 @@ const LoginRouter = () => {
                     <Route exact path="/character/:id" component={CharacterScreen} />
 
                     <Redirect to="/men" />
-                </Switch>
+                </Routes>
             </Suspense>
         </>
     )
