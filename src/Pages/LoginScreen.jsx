@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router'
 import { AuthContext } from '../context/AuthContext';
 import { authTypes } from '../types/authTypes';
 
@@ -7,11 +7,11 @@ const Login = () => {
     // Usando el dispatch del auth context
     const { dispatch } = useContext(AuthContext);
     
-    const history = useHistory();
+    const navigate = useNavigate();
     const handleLogin = () =>{
         // Disparando la accion login
         dispatch({ type: authTypes.login })
-        history.push("/men");
+        navigate("/men");
     }
     return (
         <>

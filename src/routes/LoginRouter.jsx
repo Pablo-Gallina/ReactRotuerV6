@@ -18,10 +18,10 @@ const LoginRouter = () => {
             {/* <AppRouter /> */}
             {/* <Route exact path="/login" component={Login} /> */}
 
-            <Switch>
+            
                 <PublicRouter path="/login" auth={log} component={Login} />
                 <PrivateRouter path="/" auth={log} component={AppRouter} />
-            </Switch>
+    
         </Router>
     )
 }

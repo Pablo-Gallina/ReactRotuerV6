@@ -3,12 +3,12 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Navbar from '../components/Navbar/Navbar'
 import Spinner from '../components/Spinner/Spinner'
-// import { CharacterScreen } from '../Pages/CharacterScreen'
+import { CharacterScreen } from '../Pages/CharacterScreen'
 // import MenScreen from '../Pages/MenScreen'
 // import SearchScreen from '../Pages/SearchScreen'
 // import WomenScreen from '../Pages/WomenScreen'
 
-const CharacterScreen = lazy(() => import("../Pages/CharacterScreen"));
+// const CharacterScreen = lazy(() => import("../Pages/CharacterScreen"));
 const MenScreen = lazy(() => import("../Pages/MenScreen"));
 const SearchScreen = lazy(() => import("../Pages/SearchScreen"));
 const WomenScreen = lazy(() => import("../Pages/WomenScreen"))
