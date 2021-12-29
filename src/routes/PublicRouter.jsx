@@ -1,9 +1,21 @@
-import React from 'react'
-import { Route } from 'react-router'
-import { Redirect } from 'react-router-dom'
+import React, { useContext } from 'react'
 
-const PublicRouter = ({  auth, component: Component, ...rest }) => {
-    return <Route {...rest} component={(props) => !auth.log ? <Component {...props}/> : <Redirect to="/" />} />
+import { Navigate } from 'react-router-dom'
+import { AuthContext } from '../context/AuthContext'
+
+// Children es una prop que simpre esta, los hijos de este componente
+const PublicRouter = ({ children }) => {
+    const { log } = useContext(AuthContext);
+    console.log(log.log);
+
+    // Sino esta logueado
+    if (!log.log) {
+        // Pantalla de login
+        return children
+    }else{
+        // Esta logueado
+        return <Navigate to="/" />
+    }
 }
 
 export default PublicRouter

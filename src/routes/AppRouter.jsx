@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-import { Routes, Route, Redirect } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
 import Navbar from '../components/Navbar/Navbar'
 import Spinner from '../components/Spinner/Spinner'
@@ -26,7 +26,7 @@ const LoginRouter = () => {
                     {/* Ruta con parametro (el parametro es id) */}
                     <Route exact path="/character/:id" component={CharacterScreen} />
 
-                    <Redirect to="/men" />
+                    <Navigate to="/men" />
                 </Routes>
             </Suspense>
         </>
