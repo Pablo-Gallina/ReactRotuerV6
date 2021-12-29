@@ -1,10 +1,12 @@
 import React from 'react'
-import { useParams } from 'react-router'
+import { useParams, useNavigate } from 'react-router-dom'
 import { Characters } from '../models/Characters';
 
-export const CharacterScreen = ({history}) => {
+export const CharacterScreen = () => {
     //Desescructurando el parametro
     const {id} = useParams();
+
+    const navigate = useNavigate()
 
     const {type, name, description} = Characters.find(character => character.id === id);
 
@@ -12,7 +14,7 @@ export const CharacterScreen = ({history}) => {
 
     //Regresar un paso atras en el historial de navegacion
     const handleBack = ()=> {
-        history.goBack(); //Recibimos como parametro (siempre llega)
+        navigate(-1); //-1, regresar a la pagina anterior
     }
 
     return (

@@ -26,7 +26,7 @@ const LoginRouter = () => {
                     {/* Ruta con parametro (el parametro es id) */}
                     <Route end path="/character/:id" element={<CharacterScreen/>} />
 
-                    {/* <Navigate to="/men" /> */}
+                    <Route path="*" element={<Navigate to="/men" />} />
                 </Routes>
             </Suspense>
         </>

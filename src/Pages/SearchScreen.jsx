@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router'
+import { useLocation, useNavigate } from 'react-router-dom'
 import querystring from 'query-string'
 import { Characters } from '../models/Characters'
 import Card from '../components/Card/Card'
 
-const SearchScreen = ({history}) => {
+const SearchScreen = () => {
     //Acceder a query de la url
     // hook para obtener el location (url)
     const location = useLocation()
 
+    const navigate = useNavigate()
     // Desestructurar la querystring
     const { q = "" } = querystring.parse(location.search)
     console.log(q);
@@ -24,7 +25,7 @@ const SearchScreen = ({history}) => {
     const handleSubmit = e => {
         e.preventDefault();
         //Agregar un query param al path (para realizar la busqueda)
-        history.push(`?q=${search}`)
+        navigate(`?q=${search}`)
     }
 
     const getCharacters = () => {
